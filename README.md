@@ -1,4 +1,4 @@
-<img width="1422" height="748" alt="Screenshot 2026-04-06 at 1 21 24 AM" src="https://github.com/user-attachments/assets/0b8de8f1-55b1-4980-9e79-65acb965c102" /># 💎 Lumina Ledger
+💎 Lumina Ledger
 
 **Lumina Ledger** is a premium, high-aesthetic personal finance tracking system designed with a modern **Liquid Glass** and **Claymorphism** interface. It provides a seamless and visually stunning experience for managing your daily expenses and monthly budget.
 
