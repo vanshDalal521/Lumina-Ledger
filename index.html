@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Ledger | Premium Finance Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <!-- Phosphor Icons for aesthetic icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+  <!-- Ambient background elements for glassmorphism -->
+  <div class="ambient-blob blob-1"></div>
+  <div class="ambient-blob blob-2"></div>
+  <div class="ambient-blob blob-3"></div>
+
+  <main class="app-container">
+    <header class="app-header clay-panel">
+      <div class="header-content">
+        <h1>Lumina Ledger</h1>
+        <p class="subtitle">Personalized finance tracking with a premium feel.</p>
+      </div>
+      <div class="logo-icon liquid-icon">
+        <i class="ph ph-wallet"></i>
+      </div>
+    </header>
+
+    <div class="dashboard-grid">
+      <!-- Balance Cards (Claymorphism + Glass) -->
+      <div class="balance-card clay-card clay-card-primary">
+        <div class="card-icon"><i class="ph ph-coins"></i></div>
+        <div class="card-info">
+          <h3>Total Budget</h3>
+          <h2 id="total-budget">₹8,000</h2>
+        </div>
+      </div>
+      
+      <div class="balance-card clay-card clay-card-danger">
+        <div class="card-icon"><i class="ph ph-shopping-cart"></i></div>
+        <div class="card-info">
+          <h3>Total Spent</h3>
+          <h2 id="total-spent">₹0</h2>
+        </div>
+      </div>
+      
+      <div class="balance-card clay-card clay-card-success">
+        <div class="card-icon"><i class="ph ph-piggy-bank"></i></div>
+        <div class="card-info">
+          <h3>Remaining Balance</h3>
+          <h2 id="remaining-balance">₹8,000</h2>
+        </div>
+      </div>
+    </div>
+
+    <section class="main-content">
+      <!-- Add Expense Form (Liquid Glass) -->
+      <div class="glass-panel add-expense-panel">
+        <h2 class="panel-title">Add New Expense</h2>
+        <form id="expense-form" class="expense-form">
+          <div class="input-group">
+            <label for="expense-date">Date</label>
+            <div class="liquid-input-wrapper">
+              <i class="ph ph-calendar-blank"></i>
+              <input type="date" id="expense-date" required>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="expense-category">Category</label>
+            <div class="liquid-input-wrapper">
+              <i class="ph ph-tag"></i>
+              <select id="expense-category" required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Books">Books</option>
+                <option value="Recharge">Recharge</option>
+                <option value="Fun">Fun</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="expense-desc">Description</label>
+            <div class="liquid-input-wrapper">
+              <i class="ph ph-text-t"></i>
+              <input type="text" id="expense-desc" placeholder="e.g. KFC Meal" required>
+            </div>
+          </div>
+          
+          <div class="input-group">
+            <label for="expense-amount">Amount (₹)</label>
+            <div class="liquid-input-wrapper">
+              <i class="ph ph-currency-inr"></i>
+              <input type="number" id="expense-amount" placeholder="500" min="1" required>
+            </div>
+          </div>
+          
+          <button type="submit" class="liquid-btn clay-btn">
+            <span>Add Expense</span>
+            <i class="ph ph-plus-circle"></i>
+          </button>
+        </form>
+      </div>
+
+      <!-- Expense Table (Glassmorphism Spreadsheet) -->
+      <div class="glass-panel table-panel">
+        <div class="panel-header">
+          <h2 class="panel-title">Recent Expenses</h2>
+          <button id="clear-all-btn" class="liquid-btn clay-btn danger-btn ghost-btn">
+            <i class="ph ph-trash"></i>
+            <span>Clear All</span>
+          </button>
+        </div>
+        
+        <div class="table-container liquid-scroll">
+          <table class="expense-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Category</th>
+                <th>Description</th>
+                <th class="amount-col">Amount</th>
+                <th class="action-col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="expense-tbody">
+              <!-- Expenses will be injected here via JS -->
+              <!-- Empty state shown below by default -->
+            </tbody>
+          </table>
+          <div id="empty-state" class="empty-state">
+            <i class="ph ph-receipt-x liquid-icon-large"></i>
+            <p>No expenses logged yet. Add your first expense above!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
